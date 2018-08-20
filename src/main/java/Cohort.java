@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Cohort {
     private ArrayList<String> names;
@@ -40,17 +41,31 @@ public class Cohort {
     }
 
 
-    public static ArrayList<String> randomTwoNames() {
-
-        ArrayList<String> randomNames = new ArrayList<String>();
+    public static ArrayList<String> randomNames() {
         Cohort cohort = new Cohort();
 
         Collections.shuffle(cohort.getNames());
-        randomNames.add(cohort.getNames().get(0));
-        randomNames.add(cohort.getNames().get(1));
-        return randomNames;
+        return cohort.getNames();
     }
 
+
+    public static ArrayList<ArrayList> randomPairs(){
+        Cohort cohort = new Cohort();
+        ArrayList<ArrayList> randomPairs = new ArrayList<>();
+        Collections.shuffle(cohort.getNames());
+        for (int counter5 = 0; counter5 < 10; counter5 ++){
+
+            ArrayList<String> tempArray = new ArrayList<>();
+
+            tempArray.add(cohort.getNames().get(0));
+            cohort.getNames().remove(0);
+            tempArray.add(cohort.getNames().get(0));
+            cohort.getNames().remove(0);
+
+            randomPairs.add(tempArray);
+        }
+        return randomPairs;
+    }
 
 
 
