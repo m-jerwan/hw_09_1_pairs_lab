@@ -26,12 +26,14 @@ public class CohortController {
             return new ModelAndView(model, "layout.vtl");
         }, velocityTemplateEngine);
 
+
         Spark.get("/pair",(req, res) ->{
             HashMap<String, Object> model = new HashMap<>();
             model.put("randomNames",Cohort.randomNames());
             model.put("template", "randomNames.vtl");
             return new ModelAndView(model, "layout.vtl");
         }, velocityTemplateEngine);
+
 
         Spark.get("/pairs",(req, res) ->{
             HashMap<String, Object> model = new HashMap<>();

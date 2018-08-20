@@ -11,7 +11,7 @@ public class Cohort {
         names.add("Patrycja");
         names.add("Mike");
         names.add("Tahnee");
-//        names.add("Molly");
+        names.add("Molly");
         names.add("Robbie");
         names.add("Beata");
         names.add("Joanna");
@@ -48,7 +48,6 @@ public class Cohort {
         return cohort.getNames();
     }
 
-//under constr - if size of array unknown
     public static ArrayList<ArrayList> randomPairsUnknownSizeArray(){
         Cohort cohort = new Cohort();
         int howBigArray = cohort.getNames().size();
@@ -75,12 +74,4 @@ public class Cohort {
         }
         return randomPairs;
     }
-
-
-
-
-
-
-
-
 }
