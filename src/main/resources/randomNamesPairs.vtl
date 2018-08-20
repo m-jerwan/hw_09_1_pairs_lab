@@ -2,5 +2,9 @@
 <p>Random cohort pairs:</p>
 
 #foreach($entry in $randomNames)
-<p>$entry[0], $entry[1]</p>
+    #if ($entry.size() == 2)
+        <p>$entry[0], $entry[1]</p>
+    #else
+        <p>$entry[0]</p>
+    #end
 #end

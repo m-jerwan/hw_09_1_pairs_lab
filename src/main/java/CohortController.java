@@ -14,6 +14,10 @@ public class CohortController {
         VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
         staticFileLocation("public");
 
+        ArrayList<ArrayList> testing = new ArrayList<>();
+
+
+
         Spark.get("/random", (req, res) -> {
             String randomName = Cohort.randomName();
             HashMap<String, Object> model = new HashMap<>();
@@ -31,7 +35,7 @@ public class CohortController {
 
         Spark.get("/pairs",(req, res) ->{
             HashMap<String, Object> model = new HashMap<>();
-            model.put("randomNames",Cohort.randomPairs());
+            model.put("randomNames",Cohort.randomPairsUnknownSizeArray());
             model.put("template", "randomNamesPairs.vtl");
             return new ModelAndView(model, "layout.vtl");
         }, velocityTemplateEngine);
